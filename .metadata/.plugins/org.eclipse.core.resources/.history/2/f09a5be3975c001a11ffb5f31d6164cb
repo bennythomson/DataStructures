@@ -1,0 +1,121 @@
+package queue;
+
+public class Queue<E> {
+	
+	private static class Node<F> {
+		// data fields
+		private F data;
+		private Node<F> next;
+		
+		// Constructors
+		
+		public Node(F data, Node<F> next) {
+			super();
+			this.data = data;
+			this.next = next;
+		}
+		public Node(F data) {
+			super();
+			this.data = data;
+			this.next = null;
+		}
+		
+		
+		
+	}
+	// date fields
+	private Node<E> front;
+	private Node<E> rear;
+	private int size;
+	
+	// Constructor
+	Queue() {
+		front=null;
+		rear=null;
+		size=0;
+	}
+	
+	// Methods
+	
+	/**
+	 * Adds a new element to the rear of the queue
+	 * @param item to be added
+	 * @return item that was added
+	 */
+	public E offer(E item) {
+		if(front==null) {
+			front = new Node<>(item);
+			rear = front;
+		} else {
+			rear.next = new Node<>(item);
+			rear = rear.next;
+		}
+		
+		size++;
+		
+		return item;
+		
+	}
+	
+	/**
+	 * Inspects the item at the front
+	 * @return the element at the front
+	 * @throws IllegalStateException if the queue is empty
+	 */
+	public E peek() {
+		
+		if(size == 0) {
+			throw new IllegalStateException("fart");
+		}
+		
+		return front.data;
+		
+	}
+	
+	/** 
+	 * Inspects and removes the item at the front
+	 * @return the item at the front
+	 * @throws IllegalStateException if the queue is empty 
+	 */
+	public E poll() {
+		
+		if(size == 0) {
+			throw new IllegalStateException("fart");
+		}
+		
+		Node<E> polled = front;
+		
+		front = polled.next;
+		size--;
+		
+		return polled.data;
+		
+	}
+	
+	/**
+	 * Size of the queue
+	 * @return
+	 */
+	public int size() {
+		return size;
+	}
+	
+	public String toString() {
+		Node<E> current = front;
+		String builder = "";
+		while(current!=null) {
+			builder += " " + current.data;
+			current=current.next;
+		}
+		return builder;
+	}
+	
+	public static void main(String[] args) {
+		Queue<Integer> q = new Queue<>();
+		q.offer(1);
+		q.offer(2);
+		q.poll();
+		System.out.println(q.toString());
+	}
+	
+}

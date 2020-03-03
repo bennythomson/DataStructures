@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;CS284/src/stacks&apos;&#x0A;- Original project: &apos;Stacks&apos;&#x0A;- Destination element: &apos;CS284/src/stacks&apos;&#x0A;- Original elements:&#x0A;     stacks.PalindromeChecker.java&#x0A;     stacks.Stack.java&#x0A;     stacks.StackInt.java" description="Copy compilation units" destination="=CS284/src&lt;stacks" element1="/src&lt;stacks{PalindromeChecker.java" element2="/src&lt;stacks{Stack.java" element3="/src&lt;stacks{StackInt.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1582902463557" units="3" version="1.0"/>
+</session>

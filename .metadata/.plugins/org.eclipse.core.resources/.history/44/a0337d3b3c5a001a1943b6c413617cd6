@@ -1,0 +1,27 @@
+package queue;
+
+import stacks.Stack.Node;
+
+public class Queue {
+	
+	private static class Node<F> {
+		// data fields
+		private F data;
+		private Node<F> next;
+		
+		// Constructors
+
+		public Node(F data, Node<F> next) {
+			super();
+			this.data = data;
+			this.next = next;
+		}
+		public Node(F data) {
+			super();
+			this.data = data;
+			this.next = null;
+		}		
+		
+	}
+
+}
